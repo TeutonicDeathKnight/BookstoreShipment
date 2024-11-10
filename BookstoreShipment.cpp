@@ -93,8 +93,8 @@ int main()
 			continue;
 		else if (bookTitle.length() > 35)
 		{
-			cout << "Book title is longer than 35 characters." << endl
-				<< "Shorten book title or remove from file and try again." << endl;
+			cout << "A book title is longer than 35 characters." << endl
+				<< "Shorten the book title(s) or remove from file and try again." << endl;
 
 			system("pause");
 			return 0;

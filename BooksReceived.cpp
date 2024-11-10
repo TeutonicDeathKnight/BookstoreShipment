@@ -40,6 +40,7 @@ int BooksReceived::countBooksReceived()
 {
 	int bookNum = 0;
 
+	//Loop through the book list and increment bookNum by one for every book in the list
 	for (auto value : books)
 		bookNum++;
 
@@ -68,8 +69,10 @@ int BooksReceived::getNumberPaperback() { return BooksReceived::numberPaperback;
 
 void BooksReceived::displayBooksReceivedInfo()
 {
+	//Sort the book list
 	sortBookList();
 
+	//Output first section of the report
 	cout << nameBookstore << endl << endl
 		<< "Book Shipment - Received" << endl << endl
 		<< "Books In Shipment:" << endl
@@ -80,14 +83,17 @@ void BooksReceived::displayBooksReceivedInfo()
 		<< " Paperback: " << setprecision(1) << calcPaperbackPercentage() << '%' << endl << endl
 		<< "Sorted List Of Books Received:" << endl << endl;
 
+	//Output each book title
 	for (int book = 0; book < books.size(); book++)
-		cout << books[book] << endl;
+		cout << "  " << books[book] << endl;
 
+	//Output list section of the report
 	cout << endl << "Total Books Received: " << countBooksReceived() << endl << endl;
 }
 
 BooksReceived::BooksReceived(string bookstore, string dateShipment, int numHardbound, int numPaperback)
 {
+	//Initialize each appropriate data member with file input data
 	nameBookstore = bookstore;
 	dateOfShipment = dateShipment;
 	numberHardBound = numHardbound;
@@ -96,6 +102,7 @@ BooksReceived::BooksReceived(string bookstore, string dateShipment, int numHardb
 
 BooksReceived::BooksReceived()
 {
+	//Initialize each appropriate data member to "" or 0 as applicable
 	nameBookstore = "";
 	dateOfShipment = "";
 	numberHardBound = 0;
