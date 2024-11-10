@@ -1,3 +1,5 @@
+#include <iostream>
+#include <iomanip>
 #include <string>
 #include <vector>
 #include <cmath>
@@ -5,7 +7,7 @@
 
 using namespace std;
 
-void BooksReceived::addBook(std::string book) { books.push_back(book); }
+void BooksReceived::addBook(string book) { books.push_back(book); }
 
 void BooksReceived::sortBookList()
 {
@@ -48,13 +50,13 @@ double BooksReceived::calcHardboundPercentage() { return ((numberHardBound * 1.0
 
 double BooksReceived::calcPaperbackPercentage() { return ((numberPaperback * 1.0) / (countBooksReceived() * 1.0) * 100); }
 
-void BooksReceived::setNameBookstore(std::string bookstore) { nameBookstore = bookstore; }
+void BooksReceived::setNameBookstore(string bookstore) { nameBookstore = bookstore; }
 
-std::string BooksReceived::getNameBookstore() { return BooksReceived::nameBookstore; }
+string BooksReceived::getNameBookstore() { return BooksReceived::nameBookstore; }
 
-void BooksReceived::setDateOfShipment(std::string dateShipment) { dateOfShipment = dateShipment; }
+void BooksReceived::setDateOfShipment(string dateShipment) { dateOfShipment = dateShipment; }
 
-std::string BooksReceived::getDateOfShipment() { return BooksReceived::dateOfShipment; }
+string BooksReceived::getDateOfShipment() { return BooksReceived::dateOfShipment; }
 
 void BooksReceived::setNumberHardbound(int numHardbound) { numberHardBound = numHardbound; }
 
@@ -66,7 +68,22 @@ int BooksReceived::getNumberPaperback() { return BooksReceived::numberPaperback;
 
 void BooksReceived::displayBooksReceivedInfo()
 {
+	sortBookList();
 
+	cout << nameBookstore << endl << endl
+		<< "Book Shipment - Received" << endl << endl
+		<< "Books In Shipment:" << endl
+		<< "  Hardbound: " << numberHardBound << endl
+		<< "  Paperback: " << numberPaperback << endl << endl
+		<< "Percentage of Shipment:" << endl
+		<< "  Hardbound: " << fixed << setw(3) << calcHardboundPercentage() << '%' << endl
+		<< " Paperback: " << setw(3) << calcPaperbackPercentage() << '%' << endl << endl
+		<< "Sorted List Of Books Received:" << endl << endl;
+
+	for (int book = 0; book < books.size(); book++)
+		cout << books[book] << endl;
+
+	cout << endl << "Total Books Received: " << countBooksReceived() << endl;
 }
 
 BooksReceived::BooksReceived(string bookstore, string dateShipment, int numHardbound, int numPaperback)
