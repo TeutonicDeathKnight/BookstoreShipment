@@ -76,14 +76,14 @@ void BooksReceived::displayBooksReceivedInfo()
 		<< "  Hardbound: " << numberHardBound << endl
 		<< "  Paperback: " << numberPaperback << endl << endl
 		<< "Percentage of Shipment:" << endl
-		<< "  Hardbound: " << fixed << setw(3) << calcHardboundPercentage() << '%' << endl
-		<< " Paperback: " << setw(3) << calcPaperbackPercentage() << '%' << endl << endl
+		<< "  Hardbound: " << fixed << setprecision(1) << calcHardboundPercentage() << '%' << endl
+		<< " Paperback: " << setprecision(1) << calcPaperbackPercentage() << '%' << endl << endl
 		<< "Sorted List Of Books Received:" << endl << endl;
 
 	for (int book = 0; book < books.size(); book++)
 		cout << books[book] << endl;
 
-	cout << endl << "Total Books Received: " << countBooksReceived() << endl;
+	cout << endl << "Total Books Received: " << countBooksReceived() << endl << endl;
 }
 
 BooksReceived::BooksReceived(string bookstore, string dateShipment, int numHardbound, int numPaperback)
