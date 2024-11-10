@@ -1,7 +1,12 @@
+#include <vector>
+
+//Purpose of class:
+//	Accept and store the data for a list of books that were in a shipment
+//	Provide functions to manipulate the data
 class BooksReceived
 {
 public:
-	void addBook(string book);
+	void addBook(std::string book);
 		//Accepts a book value and adds it to the "books" vector
 
 	void sortBookList();
@@ -43,11 +48,17 @@ public:
 	void displayBooksReceivedInfo();
 		//Creates and displays the formatted book shipment report
 
+	BooksReceived(std::string, std::string, int, int);
+		//Four argument constructor
+
+	BooksReceived();
+		//Default constructor
+
 
 private:
 	std::string nameBookstore;
 	std::string dateOfShipment;
 	int numberHardBound;
 	int numberPaperback;
-	std::vector<string> books;
+	std::vector<std::string> books;
 };
