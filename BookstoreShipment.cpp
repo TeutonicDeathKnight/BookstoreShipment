@@ -1,9 +1,10 @@
 // BookstoreShipment.cpp -- Build a report based on a loaded list of books in a shipment
 //CSIS 212-<D02_202440>
 
-//Include and namespace statements
+//transform() logicin BooksReceived.cpp derived from https://www.geeksforgeeks.org/how-to-convert-std-string-to-lower-case-in-cpp/
+//Sorting logic in BooksReceived.cpp derived from textbook chapter 16-1c pseudocode
 
-//Funciton prototypes
+//Include and namespace statements
 #include <iostream>
 #include <fstream>
 #include <string>
