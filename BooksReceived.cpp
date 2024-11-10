@@ -14,7 +14,12 @@ void BooksReceived::sortBookList()
 
 int BooksReceived::countBooksReceived()
 {
+	int bookNum = 0;
 
+	for (auto value : books)
+		bookNum++;
+
+	return bookNum;
 }
 
 double BooksReceived::calcHardboundPercentage()
