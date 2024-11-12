@@ -3,6 +3,8 @@
 
 //transform() logicin BooksReceived.cpp derived from https://www.geeksforgeeks.org/how-to-convert-std-string-to-lower-case-in-cpp/
 //Sorting logic in BooksReceived.cpp derived from textbook chapter 16-1c pseudocode
+//do while loop in requestUserFileInput() derived from instructor feedback on previous lab assignment
+//validateNotEmptyString() logic derived from instructor feedback on previous lab assignment
 
 //Include and namespace statements
 #include <iostream>
@@ -16,8 +18,8 @@ using namespace std;
 
 //Function Prototypes
 string requestUserFileInput();
-bool validateNotEmptyString(string& strToTest);
-string changeWhitespaceToNull(string& str);
+bool validateNotEmptyString(string strToTest);
+string changeWhitespaceToNull(string str);
 
 //Main function
 int main()
@@ -142,7 +144,7 @@ string requestUserFileInput()
 }
 
 //validate input string is not empty
-bool validateNotEmptyString(string& strToTest)
+bool validateNotEmptyString(string strToTest)
 {
 	bool containsNonWhitespaceChars = false;
 	string str = changeWhitespaceToNull(strToTest);
@@ -165,7 +167,7 @@ bool validateNotEmptyString(string& strToTest)
 }
 
 //Convert all whitespace characters to the null character, return the string
-string changeWhitespaceToNull(string& str)
+string changeWhitespaceToNull(string str)
 {
 	for (int position = 0; position < str.length(); position++)
 	{
